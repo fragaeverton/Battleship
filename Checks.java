@@ -1,9 +1,10 @@
 package battleship;
 
-import static battleship.Main.locationInput;
-import static battleship.Main.placeShip;
-import static battleship.Output.tooCloseMessage;
-import static battleship.Output.wrongLengthMessage;
+import static battleship.Input.locationInput;
+import static battleship.PrintGame.print;
+import static battleship.Write.placeShip;
+import static battleship.Main.plain;
+import static battleship.Output.*;
 
 public class Checks {
 
@@ -13,12 +14,14 @@ public class Checks {
             for (int j = c1; j < c2 + 1; j++) {
                 if (unavailableLocation[l1][j] == 'O') {
                     isClose = true;
+                    break;
                 }
             }
         } else {
             for (int i = l1; i < l2 + 1; i++) {
                 if (unavailableLocation[i][c1] == 'O') {
                     isClose = true;
+                    break;
                 }
             }
         }
@@ -37,6 +40,17 @@ public class Checks {
         } else {
             wrongLengthMessage(ships.getShips());
             locationInput(ships);
+        }
+    }
+    protected static void checkShot(int l1, int c1) {
+        if (plain[l1][c1] == 'O') {
+            plain[l1][c1] = 'X';
+            print();
+            hitShipMessage();
+        } else if (plain[l1][c1] == '~') {
+            plain[l1][c1] = 'M';
+            print();
+            missedShipMessage();
         }
     }
 }

@@ -31,4 +31,19 @@ public class Output {
     protected static void wrongShipLocationMessage() {
         System.out.println("\nError! Wrong ship location! Try again:\n");
     }
+    protected static void gameStartsMessage() {
+        System.out.println("\nThe game starts!");
+    }
+    protected static void takeAShotMessage() {
+        System.out.println("\nTake a shot!\n");
+    }
+    protected static void wrongCoordinatesMessage() {
+        System.out.println("\nError! You entered the wrong coordinates! Try again:\n");
+    }
+    protected static void hitShipMessage() {
+        System.out.println("\nYou hit a ship!\n");
+    }
+    protected static void missedShipMessage() {
+        System.out.println("\nYou missed!\n");
+    }
 }
