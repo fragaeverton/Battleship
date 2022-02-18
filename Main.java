@@ -10,11 +10,12 @@ import static battleship.Write.fillGame;
 public class Main {
 
     public static char[][] plain = new char[10][10];
+    public static char[][] shots = new char[10][10];
     public static char[][] unavailableLocation = new char[10][10];
 
     public static void main(String[] args) {
         fillGame();
-        print(true,-1, -1);
+        print(true);
         startGame();
     }
 
@@ -24,7 +25,7 @@ public class Main {
             locationInput(ship);
         }
         gameStartsMessage();
-        print(true,-1, -1);
+        print(true);
         takeAShotMessage();
         shot();
     }

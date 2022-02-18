@@ -1,7 +1,6 @@
 package battleship;
 
-import static battleship.Main.plain;
-import static battleship.Main.unavailableLocation;
+import static battleship.Main.*;
 import static battleship.PrintGame.print;
 
 public class Write {
@@ -42,13 +41,14 @@ public class Write {
                 unavailableLocation[l2 + 1][c1] = 'O';
             }
         }
-        print(false,0, 0);
+        print(false);
     }
 
     protected static void fillGame() {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 plain[i][j] = '~';
+                shots[i][j] = '~';
             }
         }
     }

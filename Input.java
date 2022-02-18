@@ -2,8 +2,7 @@ package battleship;
 
 import java.util.Scanner;
 
-import static battleship.Checks.checkLocation;
-import static battleship.Checks.checkShot;
+import static battleship.Checks.*;
 import static battleship.Main.unavailableLocation;
 import static battleship.Output.wrongCoordinatesMessage;
 import static battleship.Output.wrongShipLocationMessage;
@@ -27,15 +26,17 @@ public class Input {
         }
     }
     protected static void shot(){
-        Scanner sc = new Scanner(System.in);
-        String[] coordinates = sc.nextLine().split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)");
-        int l1 = coordinates[0].toUpperCase().charAt(0) - 65;
-        int c1 = Integer.parseInt(coordinates[1]) - 1;
-        if (!(l1 < 0) && !(l1 > 9) && !(c1 < 0) && !(c1 > 9)) {
-            checkShot(l1, c1);
-        } else {
-            wrongCoordinatesMessage();
-            shot();
+        while (rightShots < AMOUNT_PIECES) {
+            Scanner sc = new Scanner(System.in);
+            String[] coordinates = sc.nextLine().split("(?<=\\D)(?=\\d)|(?<=\\d)(?=\\D)");
+            int l1 = coordinates[0].toUpperCase().charAt(0) - 65;
+            int c1 = Integer.parseInt(coordinates[1]) - 1;
+            if (!(l1 < 0) && !(l1 > 9) && !(c1 < 0) && !(c1 > 9)) {
+                checkShot(l1, c1);
+            } else {
+                wrongCoordinatesMessage();
+                shot();
+            }
         }
     }
 }
