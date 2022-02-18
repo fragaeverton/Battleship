@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         fillGame();
-        print();
+        print(true,-1, -1);
         startGame();
     }
 
@@ -24,7 +24,7 @@ public class Main {
             locationInput(ship);
         }
         gameStartsMessage();
-        print();
+        print(true,-1, -1);
         takeAShotMessage();
         shot();
     }

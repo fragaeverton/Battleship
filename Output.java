@@ -41,9 +41,9 @@ public class Output {
         System.out.println("\nError! You entered the wrong coordinates! Try again:\n");
     }
     protected static void hitShipMessage() {
-        System.out.println("\nYou hit a ship!\n");
+        System.out.println("\nYou hit a ship!");
     }
     protected static void missedShipMessage() {
-        System.out.println("\nYou missed!\n");
+        System.out.println("\nYou missed!");
     }
 }

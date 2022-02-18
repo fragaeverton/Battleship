@@ -45,12 +45,14 @@ public class Checks {
     protected static void checkShot(int l1, int c1) {
         if (plain[l1][c1] == 'O') {
             plain[l1][c1] = 'X';
-            print();
+            print(true, l1, c1);
             hitShipMessage();
+            print(false, -1, -1);
         } else if (plain[l1][c1] == '~') {
             plain[l1][c1] = 'M';
-            print();
+            print(true, l1, c1);
             missedShipMessage();
+            print(false, -1, -1);
         }
     }
 }

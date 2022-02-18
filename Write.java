@@ -2,7 +2,6 @@ package battleship;
 
 import static battleship.Main.plain;
 import static battleship.Main.unavailableLocation;
-import static battleship.Output.hitShipMessage;
 import static battleship.PrintGame.print;
 
 public class Write {
@@ -43,7 +42,7 @@ public class Write {
                 unavailableLocation[l2 + 1][c1] = 'O';
             }
         }
-        print();
+        print(false,0, 0);
     }
 
     protected static void fillGame() {
