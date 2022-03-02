@@ -1,6 +1,18 @@
 package battleship;
 
 public class Output {
+
+    protected static void playerPlaceShipMessage(int player) {
+        System.out.printf("Player %d, place your ships on the game field\n", player);
+    }
+    protected static void playerTurnMessage(int player) {
+        System.out.printf("\nPlayer %d, it's your turn:\n\n", player);
+    }
+    protected static void swapPlayerMessage() {
+        System.out.print("\nPress Enter and pass the move to another player\n" +
+                "...");
+    }
+
     protected static void enterCoordinatesMessage(Ships ship) {
         StringBuilder sb = new StringBuilder("\nEnter the coordinates of the ");
         switch (ship) {
@@ -41,15 +53,17 @@ public class Output {
         System.out.println("\nError! You entered the wrong coordinates! Try again:\n");
     }
     protected static void hitShipMessage() {
-        System.out.println("\nYou hit a ship! Try again:\n");
+        System.out.println("\nYou hit a ship!\n");
     }
+
     protected static void missedShipMessage() {
-        System.out.println("\nYou missed. Try again:\n");
+        System.out.println("\nYou missed!");
     }
 
     protected static void sankShipMessage() {
         System.out.println("\nYou sank a ship! Specify a new target:\n");
     }
+
     protected static void sankLastShipMessage() {
         System.out.println("\nYou sank the last ship. You won. Congratulations!");
     }
